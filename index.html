@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style/style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="background"></div>
+    <div>
+      <div class="card-section">
+        <img src="images/bg-card-front.png" alt="">
+        <img src="./images/card-logo.svg" alt="" class="circle">
+        <div class="card-info">
+          <h2 id="number">0000 0000 0000 0000</h2>
+          <div class="content-card">
+            <p>Jane Appleseed</p>
+            <p>00/00</p>
+          </div>
+
+
+        </div>
+        <div class="card-sectionTwo">
+          <img src="/images/bg-card-back.png" alt="">
+          <p> 000</p>
+        </div>
+      </div>
+      <div class="card-user">
+        <form>
+          <div class="grid_1">
+            <label for="card_name">
+              Cardholder Name
+            </label>
+            <input type="text" placeholder="e.g Jane Applease" id="card_name" required>
+          </div>
+          <div class="grid_2">
+            <label for="card_number">Card Number</label>
+            <input type="number"
+              oninput="if(this.value.length > this.maxlength) this.value=this.value.slice(0,this.length)" minlength="16"
+              maxlength="16" placeholder="e.g 1234 1234 1234 1234" id="card_number" required>
+
+          </div>
+          <div class="card_information">
+            <div id="card_date">
+              <label for="card_date">Exp. Date (MM/YY)</label>
+              <div class="two_inp">
+                <div>
+                  <input type="number" placeholder="MM" id="card_month"
+                    oninput="if(this.value.length > this.maxlength) this.value=this.value.slice(0,this.length)"
+                    maxlength="2" minlength="2" required>
+                </div>
+                <div>
+                  <div>
+                    <input type="number" placeholder="YY" id="card_year"
+                      oninput="if(this.value.length > this.maxlength) this.value=this.value.slice(0,this.length)"
+                      minlength="2" maxlength="2" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid_3">
+              <label for="card_cvc">CVC</label>
+              <input type="number"
+                oninput="if(this.value.length > this.maxlength) this.value=this.value.slice(0,this.length)"
+                minlength="3" maxlength="3" placeholder="e.g. 123" id="card_cvc" required>
+            </div>
+          </div>
+          <button id="submit_btn" type="submit">Confirm</button>
+
+        </form>
+      </div>
+      <div class="card-final hidden">
+        Thank you!
+        We've added your card details
+        Continue
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
